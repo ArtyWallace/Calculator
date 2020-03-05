@@ -1,3 +1,4 @@
+///////////////////////////// Variables /////////////////////////////
 let numbers = document.querySelectorAll("#number"),
     operations = document.querySelectorAll(".operation"),
     decimalBTn = document.querySelector("#decimal"),
@@ -12,8 +13,8 @@ let numbers = document.querySelectorAll("#number"),
     
 
     
-////////////////////////////////////////////////////////
-
+///////////////////////////// Listeners /////////////////////////////
+// Number press
 for (i = 0; i < numbers.length; i++) {
     let number = numbers[i];
     number.addEventListener("click", function(e) {
@@ -21,6 +22,7 @@ for (i = 0; i < numbers.length; i++) {
     });
 }
 
+// Operations press
 for (i = 0; i < operations.length; i++) {
     let oper = operations[i];
     oper.addEventListener("click", function(e) {
@@ -28,6 +30,7 @@ for (i = 0; i < operations.length; i++) {
     });
 }
 
+// C or CE press
 for (i = 0; i < clear.length; i++) {
     let clearBtn = clear[i];
     clearBtn.addEventListener("click", function(e) {
@@ -35,10 +38,37 @@ for (i = 0; i < clear.length; i++) {
     });
 }
 
-backBtn.addEventListener("click", back);
+// Back press
+backBtn.onclick = () => {
+    console.log("we are here");
+    let currentScreen = screen.textContent;
+    screen.textContent = currentScreen.substring(0, currentScreen.length - 1);
+};
 
-sqrtBtn.addEventListener("click", sqrtFu);
+// Square root press
+sqrtBtn.onclick = () => {
+    let sqrtRes = Math.sqrt(Number(screen.textContent));
+    screen.textContent = sqrtRes;
+};
 
+// Decimal press
+decimalBTn.onclick = () => {
+    let current = screen.textContent;
+
+    if (memoryNewNumber) {
+        current = "0.";
+        memoryNewNumber = false;
+    } else {
+        if (current.indexOf(".") === -1) {
+            current = current + ".";
+        }
+    }
+
+    screen.textContent = current;
+};
+
+///////////////////////////// Functions /////////////////////////////
+// When the button with number is pressed
 function numPress(number) {
     if (memoryNewNumber) {
         screen.textContent = number;
@@ -52,6 +82,7 @@ function numPress(number) {
     }
 }
 
+// When te button with operation is pressed
 function operation(operator) {
     let currentNum = Number(screen.textContent);
 
@@ -83,6 +114,7 @@ function operation(operator) {
     }
 }
 
+// When the button C or CE is pressed
 function clearScreen(btn) {
     let clickedClearBtn = btn;
 
@@ -96,17 +128,4 @@ function clearScreen(btn) {
         screen.textContent = "0";
     }
 }
-
-function back() {
-    console.log("we are here");
-    let currentScreen = screen.textContent;
-    screen.textContent = currentScreen.substring(0, currentScreen.length - 1);
-}
-
-function sqrtFu() {
-    let sqrtRes = Math.sqrt(Number(screen.textContent));
-    screen.textContent = sqrtRes;
-}
-
-
 
