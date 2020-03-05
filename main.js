@@ -1,8 +1,10 @@
 let numbers = document.querySelectorAll("#number"),
     operations = document.querySelectorAll(".operation"),
     decimalBTn = document.querySelector("#decimal"),
+    backBtn = document.querySelector("#back"),
     clear = document.querySelectorAll("#clear"),
     resultBtn = document.querySelector("#equal"),
+    sqrtBtn = document.querySelector("#sqrt"),
     screen= document.querySelector("#screen"),
     memoryCurrentNumber = "0",
     memoryNewNumber = false,
@@ -30,8 +32,12 @@ for (i = 0; i < clear.length; i++) {
     let clearBtn = clear[i];
     clearBtn.addEventListener("click", function(e) {
         clearScreen(e.target.textContent);
-    })
+    });
 }
+
+backBtn.addEventListener("click", back);
+
+sqrtBtn.addEventListener("click", sqrtFu);
 
 function numPress(number) {
     if (memoryNewNumber) {
@@ -41,16 +47,15 @@ function numPress(number) {
         if (screen.textContent === "0") {
             screen.textContent = number;
         } else {
-            screen.textContent += number;
-            memoryCurrentNumber = screen.textContent;
+            screen.textContent = screen.textContent + number;
         }
     }
 }
 
 function operation(operator) {
     let currentNum = Number(screen.textContent);
-    let currentOperator = operator;
-    screen.textContent = currentOperator;
+
+    console.log(currentNum);
 
     if (memoryNewNumber && memoryOperator !== "=") {
         screen.textContent = memoryCurrentNumber;
@@ -66,6 +71,8 @@ function operation(operator) {
             console.log(memoryCurrentNumber);
         } else if (memoryOperator === "*") {
             memoryCurrentNumber = Number(memoryCurrentNumber) * currentNum;
+        } else if (memoryOperator === "x¹") {
+            memoryCurrentNumber = Number(memoryCurrentNumber) ** currentNum;
         } else {
             memoryCurrentNumber = Number(currentNum);
         }
@@ -84,17 +91,22 @@ function clearScreen(btn) {
         memoryNewNumber = false;
         memoryOperator = "";
 
-        // console.log(memoryCurrentNumber);
-        // console.log(memoryNewNumber);
-        // console.log(memoryOperator);
-
         screen.textContent = memoryCurrentNumber;
+    } else if (clickedClearBtn === "CE") {
+        screen.textContent = "0";
     }
-
-    
 }
 
+function back() {
+    console.log("we are here");
+    let currentScreen = screen.textContent;
+    screen.textContent = currentScreen.substring(0, currentScreen.length - 1);
+}
 
+function sqrtFu() {
+    let sqrtRes = Math.sqrt(Number(screen.textContent));
+    screen.textContent = sqrtRes;
+}
 
 
 
