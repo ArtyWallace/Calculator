@@ -40,7 +40,6 @@ for (i = 0; i < clear.length; i++) {
 
 // Back press
 backBtn.onclick = () => {
-    console.log("we are here");
     let currentScreen = screen.textContent;
     screen.textContent = currentScreen.substring(0, currentScreen.length - 1);
 };
@@ -86,8 +85,6 @@ function numPress(number) {
 function operation(operator) {
     let currentNum = Number(screen.textContent);
 
-    console.log(currentNum);
-
     if (memoryNewNumber && memoryOperator !== "=") {
         screen.textContent = memoryCurrentNumber;
     } else {
@@ -99,7 +96,6 @@ function operation(operator) {
             memoryCurrentNumber = Number(memoryCurrentNumber) - currentNum;
         } else if (memoryOperator === "/") {
             memoryCurrentNumber = Number(memoryCurrentNumber) / currentNum;
-            console.log(memoryCurrentNumber);
         } else if (memoryOperator === "*") {
             memoryCurrentNumber = Number(memoryCurrentNumber) * currentNum;
         } else if (memoryOperator === "x¹") {
@@ -110,7 +106,6 @@ function operation(operator) {
 
         screen.textContent = memoryCurrentNumber;
         memoryOperator = operator;
-        console.log(memoryOperator);
     }
 }
 

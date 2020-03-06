@@ -78,10 +78,6 @@ body {
     background-color: rgb(194, 51, 15);
 }
 
-/* .delete {
-    grid-column: 3/-1;
-} */
-
 .equal {
     grid-column: 4;
     grid-row: 6/8;
