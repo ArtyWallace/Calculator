@@ -84,6 +84,7 @@ function numPress(number) {
 // When te button with operation is pressed
 function operation(operator) {
     let currentNum = Number(screen.textContent);
+    console.log(operator);
 
     if (memoryNewNumber && memoryOperator !== "=") {
         screen.textContent = memoryCurrentNumber;
@@ -94,9 +95,9 @@ function operation(operator) {
             memoryCurrentNumber = Number(memoryCurrentNumber) + currentNum;
         } else if (memoryOperator === "-") {
             memoryCurrentNumber = Number(memoryCurrentNumber) - currentNum;
-        } else if (memoryOperator === "/") {
+        } else if (memoryOperator === "÷") {
             memoryCurrentNumber = Number(memoryCurrentNumber) / currentNum;
-        } else if (memoryOperator === "*") {
+        } else if (memoryOperator === "×") {
             memoryCurrentNumber = Number(memoryCurrentNumber) * currentNum;
         } else if (memoryOperator === "x¹") {
             memoryCurrentNumber = Number(memoryCurrentNumber) ** currentNum;
