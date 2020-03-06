@@ -4,35 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Trade+Winds&display=swap" rel="stylesheet">
     <title>Calculator</title>
 </head>
 <body>
-    <div class="container">
-        <div class="calculator">
-            <div class="calculator__screen" id="screen">0</div>
-            <div class="button clear" id="clear">C</div>
-            <div class="button" id="clear">CE</div>
-            <div class="button delete" id="back">&larr;</div>
-            <div class="button operation">+</div>
-            <div class="button operation">-</div>
-            <div class="button operation">*</div>
-            <div class="button operation">/</div>
-            <div class="button" id="number">7</div>
-            <div class="button" id="number">8</div>
-            <div class="button" id="number">9</div>
-            <div class="button operation">x&sup1;</div>
-            <div class="button" id="number">4</div>
-            <div class="button" id="number">5</div>
-            <div class="button" id="number">6</div>
-            <div class="button" id="sqrt">&radic;</div>
-            <div class="button" id="number">1</div>
-            <div class="button" id="number">2</div>
-            <div class="button" id="number">3</div>
-            <div class="button operation equal" id="equal">=</div>
-            <div class="button zero" id="number">0</div>
-            <div class="button" id="decimal">.</div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <img src="img/header__logo.svg" height="55x" alt="">
+                <div class="header__title">
+                    <h1>EasyCalc</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="intro">
+        <div class="container">
+            <div class="intro__calculator">
+                <div class="calculator">
+                    <div class="calculator__screen" id="screen">0</div>
+                    <div class="button clear" id="clear">C</div>
+                    <div class="button ce" id="clear">CE</div>
+                    <div class="button delete" id="back">&larr;</div>
+                    <div class="button operation">+</div>
+                    <div class="button operation">-</div>
+                    <div class="button operation">*</div>
+                    <div class="button operation">/</div>
+                    <div class="button number" id="number">7</div>
+                    <div class="button number" id="number">8</div>
+                    <div class="button number" id="number">9</div>
+                    <div class="button operation">x&sup1;</div>
+                    <div class="button number" id="number">4</div>
+                    <div class="button number" id="number">5</div>
+                    <div class="button number" id="number">6</div>
+                    <div class="button sqrt" id="sqrt">&radic;</div>
+                    <div class="button number" id="number">1</div>
+                    <div class="button number" id="number">2</div>
+                    <div class="button number" id="number">3</div>
+                    <div class="button operation equal" id="equal">=</div>
+                    <div class="button zero number" id="number">0</div>
+                    <div class="button decimal" id="decimal">.</div>
+                </div>
+            </div>
+            <div class="intro__content">
+                <div class="content__text"></div>
+            </div>
+
         </div>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>Made with &#10084; by Artem Prudnikov</p>
+                <p>2020</p>
+            </div>
+        </div>
+    </footer>
 
 
     <script src="main.js"></script>
