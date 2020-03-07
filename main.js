@@ -47,7 +47,7 @@ backBtn.onclick = () => {
 // Square root press
 sqrtBtn.onclick = () => {
     let sqrtRes = Math.sqrt(Number(screen.textContent));
-    screen.textContent = sqrtRes.toFixed(8);
+    screen.textContent = sqrtRes;
 };
 
 // Decimal press
@@ -95,11 +95,11 @@ function operation(operator) {
         } else if (memoryOperator === "-") {
             memoryCurrentNumber = Number(memoryCurrentNumber) - currentNum;
         } else if (memoryOperator === "÷") {
-            memoryCurrentNumber = (Number(memoryCurrentNumber) / currentNum).toFixed(8);
+            memoryCurrentNumber = (Number(memoryCurrentNumber) / currentNum);
         } else if (memoryOperator === "×") {
-            memoryCurrentNumber = (Number(memoryCurrentNumber) * currentNum).toFixed(8);
+            memoryCurrentNumber = (Number(memoryCurrentNumber) * currentNum);
         } else if (memoryOperator === "x¹") {
-            memoryCurrentNumber = (Number(memoryCurrentNumber) ** currentNum).toFixed(8);
+            memoryCurrentNumber = (Number(memoryCurrentNumber) ** currentNum);
         } else {
             memoryCurrentNumber = Number(currentNum);
         }
