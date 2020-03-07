@@ -47,7 +47,7 @@ backBtn.onclick = () => {
 // Square root press
 sqrtBtn.onclick = () => {
     let sqrtRes = Math.sqrt(Number(screen.textContent));
-    screen.textContent = sqrtRes;
+    screen.textContent = sqrtRes.toFixed(8);
 };
 
 // Decimal press
@@ -84,7 +84,6 @@ function numPress(number) {
 // When te button with operation is pressed
 function operation(operator) {
     let currentNum = Number(screen.textContent);
-    console.log(operator);
 
     if (memoryNewNumber && memoryOperator !== "=") {
         screen.textContent = memoryCurrentNumber;
@@ -102,7 +101,7 @@ function operation(operator) {
         } else if (memoryOperator === "x¹") {
             memoryCurrentNumber = Number(memoryCurrentNumber) ** currentNum;
         } else {
-            memoryCurrentNumber = Number(currentNum);
+            memoryCurrentNumber = Number(currentNum).toFixed(8);
         }
 
         screen.textContent = memoryCurrentNumber;
