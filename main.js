@@ -95,13 +95,13 @@ function operation(operator) {
         } else if (memoryOperator === "-") {
             memoryCurrentNumber = Number(memoryCurrentNumber) - currentNum;
         } else if (memoryOperator === "÷") {
-            memoryCurrentNumber = Number(memoryCurrentNumber) / currentNum;
+            memoryCurrentNumber = (Number(memoryCurrentNumber) / currentNum).toFixed(8);
         } else if (memoryOperator === "×") {
-            memoryCurrentNumber = Number(memoryCurrentNumber) * currentNum;
+            memoryCurrentNumber = (Number(memoryCurrentNumber) * currentNum).toFixed(8);
         } else if (memoryOperator === "x¹") {
-            memoryCurrentNumber = Number(memoryCurrentNumber) ** currentNum;
+            memoryCurrentNumber = (Number(memoryCurrentNumber) ** currentNum).toFixed(8);
         } else {
-            memoryCurrentNumber = Number(currentNum).toFixed(8);
+            memoryCurrentNumber = Number(currentNum);
         }
 
         screen.textContent = memoryCurrentNumber;
